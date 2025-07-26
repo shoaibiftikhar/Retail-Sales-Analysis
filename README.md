@@ -31,17 +31,19 @@ CREATE TABLE retail_sales
     sale_date DATE,	
     sale_time TIME,
     customer_id INT,	
-    gender VARCHAR(10),
+    gender VARCHAR(15),
     age INT,
-    category VARCHAR(35),
+    category VARCHAR(15),
     quantity INT,
     price_per_unit FLOAT,	
     cogs FLOAT,
     total_sale FLOAT
 );
+SELECT * FROM retail_sales
+LIMIT 10
 ```
 
-### 2. Data Exploration & Cleaning
+### 2. Data Exploring & Cleaning  
 
 - **Record Count**: Determine the total number of records in the dataset.
 - **Customer Count**: Find out how many unique customers are in the dataset.
@@ -49,8 +51,8 @@ CREATE TABLE retail_sales
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
 ```sql
-SELECT COUNT(*) FROM retail_sales;
-SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
+SELECT COUNT(*) as total_sale FROM retail_sales;
+SELECT COUNT(DISTINCT customer_id) as total_sale FROM retail_sales;
 SELECT DISTINCT category FROM retail_sales;
 
 SELECT * FROM retail_sales
@@ -66,7 +68,7 @@ WHERE
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
 ```
 
-### 3. Data Analysis & Findings
+### 3. Data Analysis & Key Problems and Answers
 
 The following SQL queries were developed to answer specific business questions:
 
